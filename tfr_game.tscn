@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://xfagaffrjvyh"]
+[gd_scene load_steps=12 format=3 uid="uid://xfagaffrjvyh"]
 
 [ext_resource type="Texture2D" uid="uid://owxfxsvxiyip" path="res://penguin.png" id="1_d8ewv"]
 [ext_resource type="Script" path="res://script/node2d/main.gd" id="1_fev4u"]
@@ -7,7 +7,6 @@
 [ext_resource type="Texture2D" uid="uid://bkuuqkk5k82yt" path="res://gnu.png" id="4_2yrel"]
 [ext_resource type="Script" path="res://script/player/rotation.gd" id="4_7kdi8"]
 [ext_resource type="Script" path="res://script/hud/main.gd" id="7_gnj6g"]
-[ext_resource type="AudioStream" uid="uid://dmpg5sgn47rf1" path="res://audio/Song 1.mp3" id="8_kbccy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sm7v0"]
 size = Vector2(161, 162)
@@ -216,7 +215,6 @@ text = "Attempt 1"
 script = ExtResource("7_gnj6g")
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("8_kbccy")
 
 [connection signal="body_entered" from="deadly1" to="player" method="_on_deadly_1_body_entered"]
 [connection signal="body_entered" from="deadly1/deadly1" to="player" method="_on_deadly_1_body_entered"]
