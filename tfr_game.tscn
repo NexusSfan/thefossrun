@@ -18,7 +18,7 @@ size = Vector2(109, 83)
 size = Vector2(189, 221)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8dft0"]
-size = Vector2(1152, 40.48)
+size = Vector2(1152, 0.48)
 
 [node name="tfr-game" type="Node2D"]
 script = ExtResource("1_fev4u")
@@ -189,13 +189,13 @@ position = Vector2(954, 899)
 scale = Vector2(5, 5)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ground"]
-position = Vector2(0.400055, 53.6)
+position = Vector2(0.400055, -46.4)
 scale = Vector2(1, 5)
 shape = SubResource("RectangleShape2D_8dft0")
 
 [node name="Sprite2D" type="Sprite2D" parent="ground"]
-position = Vector2(4.79999, 49.488)
-scale = Vector2(0.72, 0.122138)
+position = Vector2(4.79999, 13.488)
+scale = Vector2(0.72, 0.0761022)
 texture = ExtResource("4_2yrel")
 
 [node name="HUD" type="Control" parent="."]
