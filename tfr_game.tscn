@@ -168,7 +168,7 @@ position = Vector2(3.33336, -4.44442)
 shape = SubResource("RectangleShape2D_m34ig")
 
 [node name="player" type="CharacterBody2D" parent="."]
-position = Vector2(-10, 545)
+position = Vector2(-613, 545)
 script = ExtResource("2_gi88c")
 
 [node name="Camera2D" type="Camera2D" parent="player"]
@@ -201,15 +201,13 @@ texture = ExtResource("4_2yrel")
 [node name="HUD" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = -1284.0
+offset_top = 100.0
+offset_right = -1244.0
+offset_bottom = 140.0
 
 [node name="Label" type="Label" parent="HUD"]
 layout_mode = 0
-offset_left = -613.0
-offset_top = 96.0
-offset_right = -535.0
-offset_bottom = 119.0
 scale = Vector2(5.28, 4.64)
 text = "Attempt 1"
 script = ExtResource("7_gnj6g")
