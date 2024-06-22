@@ -1,0 +1,227 @@
+[gd_scene load_steps=13 format=3 uid="uid://xfagaffrjvyh"]
+
+[ext_resource type="Texture2D" uid="uid://owxfxsvxiyip" path="res://penguin.png" id="1_d8ewv"]
+[ext_resource type="Script" path="res://script/node2d/main.gd" id="1_fev4u"]
+[ext_resource type="Texture2D" uid="uid://ew5s6mlcglcu" path="res://nonfoss.png" id="2_5c44i"]
+[ext_resource type="Script" path="res://script/player/main.gd" id="2_gi88c"]
+[ext_resource type="Texture2D" uid="uid://bkuuqkk5k82yt" path="res://gnu.png" id="4_2yrel"]
+[ext_resource type="Script" path="res://script/player/rotation.gd" id="4_7kdi8"]
+[ext_resource type="Script" path="res://script/hud/main.gd" id="7_gnj6g"]
+[ext_resource type="AudioStream" uid="uid://dmpg5sgn47rf1" path="res://audio/Song 1.mp3" id="8_kbccy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sm7v0"]
+size = Vector2(161, 162)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m34ig"]
+size = Vector2(109, 83)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1wp42"]
+size = Vector2(189, 221)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8dft0"]
+size = Vector2(1152, 40.48)
+
+[node name="tfr-game" type="Node2D"]
+script = ExtResource("1_fev4u")
+
+[node name="blocks" type="StaticBody2D" parent="."]
+position = Vector2(1934, 354)
+
+[node name="block1" type="StaticBody2D" parent="blocks"]
+position = Vector2(0, 219)
+
+[node name="Sprite2D" type="Sprite2D" parent="blocks/block1"]
+position = Vector2(4.79999, 3)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("4_2yrel")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="blocks/block1"]
+position = Vector2(4.5, 3)
+shape = SubResource("RectangleShape2D_sm7v0")
+
+[node name="block2" type="StaticBody2D" parent="blocks"]
+position = Vector2(350, 222)
+
+[node name="Sprite2D" type="Sprite2D" parent="blocks/block2"]
+position = Vector2(4.79999, 3)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("4_2yrel")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="blocks/block2"]
+position = Vector2(4.5, 3)
+shape = SubResource("RectangleShape2D_sm7v0")
+
+[node name="block3" type="StaticBody2D" parent="blocks"]
+position = Vector2(349, 59)
+
+[node name="Sprite2D" type="Sprite2D" parent="blocks/block3"]
+position = Vector2(4.79999, 3)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("4_2yrel")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="blocks/block3"]
+position = Vector2(4.5, 3)
+shape = SubResource("RectangleShape2D_sm7v0")
+
+[node name="block4" type="StaticBody2D" parent="blocks"]
+position = Vector2(712, 222)
+
+[node name="Sprite2D" type="Sprite2D" parent="blocks/block4"]
+position = Vector2(4.79999, 3)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("4_2yrel")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="blocks/block4"]
+position = Vector2(4.5, 3)
+shape = SubResource("RectangleShape2D_sm7v0")
+
+[node name="block5" type="StaticBody2D" parent="blocks"]
+position = Vector2(713, 59)
+
+[node name="Sprite2D" type="Sprite2D" parent="blocks/block5"]
+position = Vector2(4.79999, 3)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("4_2yrel")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="blocks/block5"]
+position = Vector2(4.5, 3)
+shape = SubResource("RectangleShape2D_sm7v0")
+
+[node name="block6" type="StaticBody2D" parent="blocks"]
+position = Vector2(713, -102)
+
+[node name="Sprite2D" type="Sprite2D" parent="blocks/block6"]
+position = Vector2(4.79999, 3)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("4_2yrel")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="blocks/block6"]
+position = Vector2(4.5, 3)
+shape = SubResource("RectangleShape2D_sm7v0")
+
+[node name="deadly1" type="Area2D" parent="."]
+position = Vector2(841, 568)
+scale = Vector2(0.9, 0.9)
+
+[node name="deadly1" type="Area2D" parent="deadly1"]
+
+[node name="Sprite2D" type="Sprite2D" parent="deadly1/deadly1"]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_5c44i")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="deadly1/deadly1"]
+position = Vector2(3.33336, -4.44442)
+shape = SubResource("RectangleShape2D_m34ig")
+
+[node name="deadly2" type="Area2D" parent="deadly1"]
+position = Vector2(1414.44, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="deadly1/deadly2"]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_5c44i")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="deadly1/deadly2"]
+position = Vector2(3.33336, -4.44442)
+shape = SubResource("RectangleShape2D_m34ig")
+
+[node name="deadly3" type="Area2D" parent="deadly1"]
+position = Vector2(1812.22, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="deadly1/deadly3"]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_5c44i")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="deadly1/deadly3"]
+position = Vector2(3.33336, -4.44442)
+shape = SubResource("RectangleShape2D_m34ig")
+
+[node name="deadly4" type="Area2D" parent="deadly1"]
+position = Vector2(2210, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="deadly1/deadly4"]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_5c44i")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="deadly1/deadly4"]
+position = Vector2(3.33336, -4.44442)
+shape = SubResource("RectangleShape2D_m34ig")
+
+[node name="deadly5" type="Area2D" parent="deadly1"]
+position = Vector2(3185.56, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="deadly1/deadly5"]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_5c44i")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="deadly1/deadly5"]
+position = Vector2(3.33336, -4.44442)
+shape = SubResource("RectangleShape2D_m34ig")
+
+[node name="deadly6" type="Area2D" parent="deadly1"]
+position = Vector2(2438.89, -2.22221)
+
+[node name="Sprite2D" type="Sprite2D" parent="deadly1/deadly6"]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_5c44i")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="deadly1/deadly6"]
+position = Vector2(3.33336, -4.44442)
+shape = SubResource("RectangleShape2D_m34ig")
+
+[node name="player" type="CharacterBody2D" parent="."]
+position = Vector2(-10, 545)
+script = ExtResource("2_gi88c")
+
+[node name="Camera2D" type="Camera2D" parent="player"]
+zoom = Vector2(0.5, 0.5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player"]
+position = Vector2(0, 2)
+shape = SubResource("RectangleShape2D_1wp42")
+
+[node name="Sprite2D" type="Sprite2D" parent="player"]
+position = Vector2(-4.00003, 6.00002)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("1_d8ewv")
+script = ExtResource("4_7kdi8")
+
+[node name="ground" type="StaticBody2D" parent="."]
+position = Vector2(954, 899)
+scale = Vector2(5, 5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ground"]
+position = Vector2(0.400055, 53.6)
+scale = Vector2(1, 5)
+shape = SubResource("RectangleShape2D_8dft0")
+
+[node name="Sprite2D" type="Sprite2D" parent="ground"]
+position = Vector2(4.79999, 49.488)
+scale = Vector2(0.72, 0.122138)
+texture = ExtResource("4_2yrel")
+
+[node name="HUD" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="HUD"]
+layout_mode = 0
+offset_left = -613.0
+offset_top = 96.0
+offset_right = -535.0
+offset_bottom = 119.0
+scale = Vector2(5.28, 4.64)
+text = "Attempt 1"
+script = ExtResource("7_gnj6g")
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_kbccy")
+
+[connection signal="body_entered" from="deadly1" to="player" method="_on_deadly_1_body_entered"]
+[connection signal="body_entered" from="deadly1/deadly1" to="player" method="_on_deadly_1_body_entered"]
+[connection signal="body_entered" from="deadly1/deadly2" to="player" method="_on_deadly_1_body_entered"]
+[connection signal="body_entered" from="deadly1/deadly3" to="player" method="_on_deadly_1_body_entered"]
+[connection signal="body_entered" from="deadly1/deadly4" to="player" method="_on_deadly_1_body_entered"]
+[connection signal="body_entered" from="deadly1/deadly5" to="player" method="_on_deadly_1_body_entered"]
+[connection signal="body_entered" from="deadly1/deadly6" to="player" method="_on_deadly_1_body_entered"]
