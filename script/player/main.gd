@@ -32,7 +32,7 @@ func _physics_process(delta):
 
 func _on_deadly_1_body_entered(body):
 	if(body.name == "player"):
-		position = Vector2(30,545)
+		position = Vector2(-610,545)
 		attempt += 1.0
 		# get_node("../Music").stop()
 		# get_node("../Music").play(0.0)

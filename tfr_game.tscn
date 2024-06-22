@@ -168,7 +168,7 @@ position = Vector2(3.33336, -4.44442)
 shape = SubResource("RectangleShape2D_m34ig")
 
 [node name="player" type="CharacterBody2D" parent="."]
-position = Vector2(-613, 545)
+position = Vector2(-610, 545)
 script = ExtResource("2_gi88c")
 
 [node name="Camera2D" type="Camera2D" parent="player"]
