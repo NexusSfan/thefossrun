@@ -3,3 +3,6 @@
 
 # Will add later
 audio/
+
+# Compile it yourself
+build/
