@@ -24,11 +24,20 @@ position = Vector2(1934, 354)
 [node name="blocks" parent="blocks" instance=ExtResource("2_qu87v")]
 position = Vector2(-1960, 222)
 
+[node name="blocks2" parent="blocks" instance=ExtResource("2_qu87v")]
+position = Vector2(-1621, 225)
+
 [node name="deadlys" type="Area2D" parent="."]
 position = Vector2(841, 568)
 scale = Vector2(0.9, 0.9)
 
 [node name="deadly" parent="deadlys" instance=ExtResource("3_erbyj")]
+
+[node name="deadly2" parent="deadlys" instance=ExtResource("3_erbyj")]
+position = Vector2(-190, 0)
+
+[node name="deadly2" parent="deadlys/deadly2" instance=ExtResource("3_erbyj")]
+position = Vector2(-190, 0)
 
 [node name="player" type="CharacterBody2D" parent="."]
 position = Vector2(-610, 555)
@@ -78,3 +87,5 @@ script = ExtResource("7_gnj6g")
 
 [connection signal="body_entered" from="deadlys" to="player" method="_on_deadlys_body_entered"]
 [connection signal="body_entered" from="deadlys/deadly" to="player" method="_on_deadlys_body_entered"]
+[connection signal="body_entered" from="deadlys/deadly2" to="player" method="_on_deadlys_body_entered"]
+[connection signal="body_entered" from="deadlys/deadly2/deadly2" to="player" method="_on_deadlys_body_entered"]

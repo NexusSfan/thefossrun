@@ -1,5 +1,5 @@
 extends CharacterBody2D
-@export var SPEED = 300.0
+@export var SPEED = 400.0
 @export var JUMP_VELOCITY = -700.0
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
@@ -8,11 +8,14 @@ var jumping = false
 var onfloor = false
 var attempt = 1.0
 
+var DEFAULTSPEED = SPEED
+var SPEEDMODIFIER
 var playerpos
 var oldpos
 
 func _ready():
 	oldpos = Vector2(position.x, position.y)
+	SPEEDMODIFIER = 1.0
 
 func _physics_process(delta):
 	oldpos = Vector2(position.x, position.y)
@@ -32,7 +35,7 @@ func _physics_process(delta):
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
-	velocity.x = SPEED
+	velocity.x = DEFAULTSPEED * SPEEDMODIFIER
 
 	move_and_slide()
 	
