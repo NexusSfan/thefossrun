@@ -8,6 +8,8 @@ var jumping = false
 var onfloor = false
 var attempt = 1.0
 
+var playerpos
+
 func _physics_process(delta):
 	# Add the gravity.
 	if not is_on_floor():
@@ -28,6 +30,8 @@ func _physics_process(delta):
 	velocity.x = SPEED
 
 	move_and_slide()
+	
+	playerpos = position
 
 
 func _on_deadly_1_body_entered(body):

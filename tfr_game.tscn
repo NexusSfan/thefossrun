@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://xfagaffrjvyh"]
+[gd_scene load_steps=14 format=3 uid="uid://xfagaffrjvyh"]
 
 [ext_resource type="Texture2D" uid="uid://owxfxsvxiyip" path="res://penguin.png" id="1_d8ewv"]
 [ext_resource type="Script" path="res://script/node2d/main.gd" id="1_fev4u"]
@@ -7,6 +7,10 @@
 [ext_resource type="Texture2D" uid="uid://bkuuqkk5k82yt" path="res://gnu.png" id="4_2yrel"]
 [ext_resource type="Script" path="res://script/player/rotation.gd" id="4_7kdi8"]
 [ext_resource type="Script" path="res://script/hud/main.gd" id="7_gnj6g"]
+[ext_resource type="Script" path="res://script/player/block.gd" id="7_lmmjm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6hr6e"]
+size = Vector2(55.5, 60.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sm7v0"]
 size = Vector2(161, 162)
@@ -23,79 +27,24 @@ size = Vector2(1152, 0.48)
 [node name="tfr-game" type="Node2D"]
 script = ExtResource("1_fev4u")
 
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(-610, 545)
+script = ExtResource("7_lmmjm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_6hr6e")
+
 [node name="blocks" type="StaticBody2D" parent="."]
 position = Vector2(1934, 354)
 
 [node name="block1" type="StaticBody2D" parent="blocks"]
-position = Vector2(0, 219)
+position = Vector2(0, 225)
 
 [node name="Sprite2D" type="Sprite2D" parent="blocks/block1"]
-position = Vector2(4.79999, 3)
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("4_2yrel")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="blocks/block1"]
-position = Vector2(4.5, 3)
-shape = SubResource("RectangleShape2D_sm7v0")
-
-[node name="block2" type="StaticBody2D" parent="blocks"]
-position = Vector2(350, 222)
-
-[node name="Sprite2D" type="Sprite2D" parent="blocks/block2"]
-position = Vector2(4.79999, 3)
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("4_2yrel")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="blocks/block2"]
-position = Vector2(4.5, 3)
-shape = SubResource("RectangleShape2D_sm7v0")
-
-[node name="block3" type="StaticBody2D" parent="blocks"]
-position = Vector2(349, 59)
-
-[node name="Sprite2D" type="Sprite2D" parent="blocks/block3"]
-position = Vector2(4.79999, 3)
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("4_2yrel")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="blocks/block3"]
-position = Vector2(4.5, 3)
-shape = SubResource("RectangleShape2D_sm7v0")
-
-[node name="block4" type="StaticBody2D" parent="blocks"]
-position = Vector2(712, 222)
-
-[node name="Sprite2D" type="Sprite2D" parent="blocks/block4"]
-position = Vector2(4.79999, 3)
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("4_2yrel")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="blocks/block4"]
-position = Vector2(4.5, 3)
-shape = SubResource("RectangleShape2D_sm7v0")
-
-[node name="block5" type="StaticBody2D" parent="blocks"]
-position = Vector2(713, 59)
-
-[node name="Sprite2D" type="Sprite2D" parent="blocks/block5"]
-position = Vector2(4.79999, 3)
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("4_2yrel")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="blocks/block5"]
-position = Vector2(4.5, 3)
-shape = SubResource("RectangleShape2D_sm7v0")
-
-[node name="block6" type="StaticBody2D" parent="blocks"]
-position = Vector2(713, -102)
-
-[node name="Sprite2D" type="Sprite2D" parent="blocks/block6"]
-position = Vector2(4.79999, 3)
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("4_2yrel")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="blocks/block6"]
-position = Vector2(4.5, 3)
 shape = SubResource("RectangleShape2D_sm7v0")
 
 [node name="deadly1" type="Area2D" parent="."]
@@ -175,11 +124,10 @@ script = ExtResource("2_gi88c")
 zoom = Vector2(0.5, 0.5)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="player"]
-position = Vector2(0, 2)
 shape = SubResource("RectangleShape2D_1wp42")
 
 [node name="Sprite2D" type="Sprite2D" parent="player"]
-position = Vector2(-4.00003, 6.00002)
+position = Vector2(-6.00003, 8.00002)
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("1_d8ewv")
 script = ExtResource("4_7kdi8")
@@ -214,6 +162,8 @@ script = ExtResource("7_gnj6g")
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
 
+[connection signal="area_entered" from="Area2D" to="Area2D" method="_on_area_entered"]
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
 [connection signal="body_entered" from="deadly1" to="player" method="_on_deadly_1_body_entered"]
 [connection signal="body_entered" from="deadly1/deadly1" to="player" method="_on_deadly_1_body_entered"]
 [connection signal="body_entered" from="deadly1/deadly2" to="player" method="_on_deadly_1_body_entered"]
