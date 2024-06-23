@@ -40,7 +40,7 @@ func _physics_process(delta):
 	
 	print(position)
 	print(oldpos)
-	if (oldpos == position):
+	if (oldpos.x == position.x):
 		die()
 
 
@@ -49,7 +49,7 @@ func _on_deadly_1_body_entered(body):
 		die()
 
 func die():
-	position = Vector2(-610,545)
+	position = Vector2(-610,555)
 	attempt += 1.0
 	# get_node("../Music").stop()
 	# get_node("../Music").play(0.0)
