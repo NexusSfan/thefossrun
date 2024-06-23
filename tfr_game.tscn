@@ -13,7 +13,7 @@
 size = Vector2(160, 162)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m34ig"]
-size = Vector2(109, 83)
+size = Vector2(151.111, 137.778)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sm7v0"]
 size = Vector2(73, 226)
@@ -56,7 +56,7 @@ scale = Vector2(0.1, 0.1)
 texture = ExtResource("2_5c44i")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="deadly1/deadly1"]
-position = Vector2(3.33336, -4.44442)
+position = Vector2(4.44427, -1.11115)
 shape = SubResource("RectangleShape2D_m34ig")
 
 [node name="deadly2" type="Area2D" parent="deadly1"]
@@ -160,11 +160,11 @@ script = ExtResource("7_gnj6g")
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="bcollidechecker" type="Area2D" parent="."]
 position = Vector2(-560, 530)
 script = ExtResource("7_lmmjm")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bcollidechecker"]
 shape = SubResource("RectangleShape2D_uxys4")
 
 [connection signal="body_entered" from="deadly1" to="player" method="_on_deadly_1_body_entered"]
@@ -174,5 +174,5 @@ shape = SubResource("RectangleShape2D_uxys4")
 [connection signal="body_entered" from="deadly1/deadly4" to="player" method="_on_deadly_1_body_entered"]
 [connection signal="body_entered" from="deadly1/deadly5" to="player" method="_on_deadly_1_body_entered"]
 [connection signal="body_entered" from="deadly1/deadly6" to="player" method="_on_deadly_1_body_entered"]
-[connection signal="area_entered" from="Area2D" to="Area2D" method="_on_area_entered"]
-[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[connection signal="area_entered" from="bcollidechecker" to="bcollidechecker" method="_on_area_entered"]
+[connection signal="body_entered" from="bcollidechecker" to="bcollidechecker" method="_on_body_entered"]
