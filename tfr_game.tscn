@@ -1,16 +1,13 @@
-[gd_scene load_steps=12 format=3 uid="uid://xfagaffrjvyh"]
+[gd_scene load_steps=11 format=3 uid="uid://xfagaffrjvyh"]
 
 [ext_resource type="Texture2D" uid="uid://owxfxsvxiyip" path="res://penguin.png" id="1_d8ewv"]
 [ext_resource type="Script" path="res://script/node2d/main.gd" id="1_fev4u"]
-[ext_resource type="Texture2D" uid="uid://ew5s6mlcglcu" path="res://nonfoss.png" id="2_5c44i"]
 [ext_resource type="Script" path="res://script/player/main.gd" id="2_gi88c"]
 [ext_resource type="PackedScene" uid="uid://c577hx15l53h6" path="res://gnu_slash_block.tscn" id="2_qu87v"]
+[ext_resource type="PackedScene" uid="uid://by6q5awh05yho" path="res://deadly.tscn" id="3_erbyj"]
 [ext_resource type="Texture2D" uid="uid://bkuuqkk5k82yt" path="res://gnu.png" id="4_2yrel"]
 [ext_resource type="Script" path="res://script/player/rotation.gd" id="4_7kdi8"]
 [ext_resource type="Script" path="res://script/hud/main.gd" id="7_gnj6g"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_m34ig"]
-size = Vector2(96.6665, 115.556)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sm7v0"]
 size = Vector2(189, 226)
@@ -27,18 +24,11 @@ position = Vector2(1934, 354)
 [node name="blocks" parent="blocks" instance=ExtResource("2_qu87v")]
 position = Vector2(-1960, 222)
 
-[node name="deadly1" type="Area2D" parent="."]
+[node name="deadlys" type="Area2D" parent="."]
 position = Vector2(841, 568)
 scale = Vector2(0.9, 0.9)
 
-[node name="deadly1" type="Area2D" parent="deadly1"]
-
-[node name="Sprite2D" type="Sprite2D" parent="deadly1/deadly1"]
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("2_5c44i")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="deadly1/deadly1"]
-shape = SubResource("RectangleShape2D_m34ig")
+[node name="deadly" parent="deadlys" instance=ExtResource("3_erbyj")]
 
 [node name="player" type="CharacterBody2D" parent="."]
 position = Vector2(-610, 555)
@@ -86,5 +76,5 @@ script = ExtResource("7_gnj6g")
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
 
-[connection signal="body_entered" from="deadly1" to="player" method="_on_deadly_1_body_entered"]
-[connection signal="body_entered" from="deadly1/deadly1" to="player" method="_on_deadly_1_body_entered"]
+[connection signal="body_entered" from="deadlys" to="player" method="_on_deadlys_body_entered"]
+[connection signal="body_entered" from="deadlys/deadly" to="player" method="_on_deadlys_body_entered"]

@@ -38,14 +38,7 @@ func _physics_process(delta):
 	
 	playerpos = position
 	
-	print(position)
-	print(oldpos)
 	if (oldpos.x == position.x):
-		die()
-
-
-func _on_deadly_1_body_entered(body):
-	if(body.name == "player"):
 		die()
 
 func die():
@@ -53,3 +46,8 @@ func die():
 	attempt += 1.0
 	# get_node("../Music").stop()
 	# get_node("../Music").play(0.0)
+
+func _on_deadlys_body_entered(body):
+	print(body)
+	if(body.name == "player"):
+		die()
