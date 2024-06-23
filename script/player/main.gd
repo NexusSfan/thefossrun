@@ -9,8 +9,13 @@ var onfloor = false
 var attempt = 1.0
 
 var playerpos
+var oldpos
+
+func _ready():
+	oldpos = Vector2(position.x, position.y)
 
 func _physics_process(delta):
+	oldpos = Vector2(position.x, position.y)
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y += gravity * delta
@@ -32,6 +37,11 @@ func _physics_process(delta):
 	move_and_slide()
 	
 	playerpos = position
+	
+	print(position)
+	print(oldpos)
+	if (oldpos == position):
+		die()
 
 
 func _on_deadly_1_body_entered(body):
