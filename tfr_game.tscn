@@ -38,7 +38,6 @@ scale = Vector2(0.1, 0.1)
 texture = ExtResource("2_5c44i")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="deadly1/deadly1"]
-position = Vector2(0.555481, 0)
 shape = SubResource("RectangleShape2D_m34ig")
 
 [node name="player" type="CharacterBody2D" parent="."]
