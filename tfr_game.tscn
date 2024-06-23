@@ -36,8 +36,8 @@ scale = Vector2(0.9, 0.9)
 [node name="deadly2" parent="deadlys" instance=ExtResource("3_erbyj")]
 position = Vector2(-190, 0)
 
-[node name="deadly2" parent="deadlys/deadly2" instance=ExtResource("3_erbyj")]
-position = Vector2(-190, 0)
+[node name="deadly3" parent="deadlys" instance=ExtResource("3_erbyj")]
+position = Vector2(-380, 0)
 
 [node name="player" type="CharacterBody2D" parent="."]
 position = Vector2(-610, 555)
@@ -88,4 +88,4 @@ script = ExtResource("7_gnj6g")
 [connection signal="body_entered" from="deadlys" to="player" method="_on_deadlys_body_entered"]
 [connection signal="body_entered" from="deadlys/deadly" to="player" method="_on_deadlys_body_entered"]
 [connection signal="body_entered" from="deadlys/deadly2" to="player" method="_on_deadlys_body_entered"]
-[connection signal="body_entered" from="deadlys/deadly2/deadly2" to="player" method="_on_deadlys_body_entered"]
+[connection signal="body_entered" from="deadlys/deadly3" to="player" method="_on_deadlys_body_entered"]
