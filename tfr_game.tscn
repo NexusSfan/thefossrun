@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://xfagaffrjvyh"]
+[gd_scene load_steps=12 format=3 uid="uid://xfagaffrjvyh"]
 
 [ext_resource type="Texture2D" uid="uid://owxfxsvxiyip" path="res://penguin.png" id="1_d8ewv"]
 [ext_resource type="Script" path="res://script/node2d/main.gd" id="1_fev4u"]
@@ -8,12 +8,13 @@
 [ext_resource type="Texture2D" uid="uid://bkuuqkk5k82yt" path="res://gnu.png" id="4_2yrel"]
 [ext_resource type="Script" path="res://script/player/rotation.gd" id="4_7kdi8"]
 [ext_resource type="Script" path="res://script/hud/main.gd" id="7_gnj6g"]
+[ext_resource type="Script" path="res://script/ground/follow.gd" id="9_qesy1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sm7v0"]
 size = Vector2(189, 226)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8dft0"]
-size = Vector2(1152, 0.48)
+size = Vector2(1152, 0.5)
 
 [node name="tfr-game" type="Node2D"]
 script = ExtResource("1_fev4u")
@@ -22,10 +23,25 @@ script = ExtResource("1_fev4u")
 position = Vector2(1934, 354)
 
 [node name="blocks" parent="blocks" instance=ExtResource("2_qu87v")]
-position = Vector2(-1960, 222)
+position = Vector2(-1244, 31)
 
 [node name="blocks2" parent="blocks" instance=ExtResource("2_qu87v")]
 position = Vector2(-1621, 225)
+
+[node name="blocks3" parent="blocks" instance=ExtResource("2_qu87v")]
+position = Vector2(-629, -25)
+
+[node name="blocks4" parent="blocks" instance=ExtResource("2_qu87v")]
+position = Vector2(-469, -17)
+
+[node name="blocks5" parent="blocks" instance=ExtResource("2_qu87v")]
+position = Vector2(-309, 6)
+
+[node name="blocks6" parent="blocks" instance=ExtResource("2_qu87v")]
+position = Vector2(-147, 30)
+
+[node name="blocks7" parent="blocks" instance=ExtResource("2_qu87v")]
+position = Vector2(13, 54)
 
 [node name="deadlys" type="Area2D" parent="."]
 position = Vector2(841, 568)
@@ -56,12 +72,11 @@ position = Vector2(5.5, -7)
 shape = SubResource("RectangleShape2D_sm7v0")
 
 [node name="ground" type="StaticBody2D" parent="."]
-position = Vector2(954, 899)
+position = Vector2(955, 900)
 scale = Vector2(5, 5)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ground"]
 position = Vector2(0.400055, -46.4)
-scale = Vector2(1, 5)
 shape = SubResource("RectangleShape2D_8dft0")
 
 [node name="Sprite2D" type="Sprite2D" parent="ground"]
@@ -84,6 +99,15 @@ text = "Attempt 1"
 script = ExtResource("7_gnj6g")
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
+
+[node name="followground" type="StaticBody2D" parent="."]
+position = Vector2(955, 900)
+scale = Vector2(5, 5)
+script = ExtResource("9_qesy1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="followground"]
+position = Vector2(0.400055, -46.4)
+shape = SubResource("RectangleShape2D_8dft0")
 
 [connection signal="body_entered" from="deadlys" to="player" method="_on_deadlys_body_entered"]
 [connection signal="body_entered" from="deadlys/deadly" to="player" method="_on_deadlys_body_entered"]

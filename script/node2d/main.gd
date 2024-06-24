@@ -5,6 +5,8 @@ extends Node2D
 func _ready():
 	# get_node("./Music").play(0.0)
 	print("fix bug")
+	randomize()
+	# seed("The Foss Run".hash())
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

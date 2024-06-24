@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://bkuuqkk5k82yt" path="res://gnu.png" id="1_kul5n"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ryshk"]
-size = Vector2(160, 162)
+size = Vector2(160, 157)
 
 [node name="StaticBody2D" type="StaticBody2D"]
 
@@ -12,9 +12,7 @@ scale = Vector2(0.1, 0.1)
 texture = ExtResource("1_kul5n")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -0.5)
 shape = SubResource("RectangleShape2D_ryshk")
 
-[node name="blockcollide" type="Area2D" parent="."]
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="blockcollide"]
-shape = SubResource("RectangleShape2D_ryshk")
+[node name="Node" type="Node" parent="CollisionShape2D"]

@@ -9,13 +9,12 @@ var onfloor = false
 var attempt = 1.0
 
 var DEFAULTSPEED = SPEED
-var SPEEDMODIFIER
+var SPEEDMODIFIER = 1.0
 var playerpos
 var oldpos
 
 func _ready():
 	oldpos = Vector2(position.x, position.y)
-	SPEEDMODIFIER = 1.0
 
 func _physics_process(delta):
 	oldpos = Vector2(position.x, position.y)
