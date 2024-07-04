@@ -10,9 +10,9 @@ config_version=5
 
 [application]
 
-config/name="The FOSS Run"
+config/name="Super Tux Run"
 config/tags=PackedStringArray("2d")
-run/main_scene="res://tfr_game.tscn"
+run/main_scene="res://str_game.tscn"
 config/features=PackedStringArray("4.2", "Mobile")
 config/icon="res://icon.svg"
 

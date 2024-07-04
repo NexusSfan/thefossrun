@@ -1,3 +1,3 @@
-# The FOSS Run
-The FOSS Run is a Godot game.
+# Super Tux Run
+Super Tux Run is a Godot game.
 Currently in development.

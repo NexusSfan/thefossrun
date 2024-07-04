@@ -15,7 +15,7 @@ size = Vector2(189, 226)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8dft0"]
 size = Vector2(4661.2, 0.5)
 
-[node name="tfr-game" type="Node2D"]
+[node name="str-game" type="Node2D"]
 script = ExtResource("1_fev4u")
 
 [node name="blocks" type="StaticBody2D" parent="."]
