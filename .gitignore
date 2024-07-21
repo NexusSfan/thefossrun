@@ -19,3 +19,9 @@ audio/
 
 # Compile it yourself
 build/
+
+*.tmp
+*.import
+
+# Mac OS sucks btw
+.DS_Store
