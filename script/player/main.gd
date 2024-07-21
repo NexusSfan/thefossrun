@@ -14,6 +14,7 @@ var gravityswitch = 1
 var playerpos
 var oldpos
 var isupsidedown
+var isdying
 
 func _ready():
 	oldpos = Vector2(position.x, position.y)
