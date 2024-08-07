@@ -1,10 +1,10 @@
 [gd_scene load_steps=11 format=3 uid="uid://uu7r2ac8efrp"]
 
-[ext_resource type="Texture2D" uid="uid://c7bu3n4g8en6l" path="res://penguin.png" id="1_d8ewv"]
+[ext_resource type="Texture2D" uid="uid://dg5gywef3o722" path="res://art/penguin.png" id="1_d8ewv"]
 [ext_resource type="Script" path="res://script/node2d/main.gd" id="1_fev4u"]
-[ext_resource type="PackedScene" uid="uid://c577hx15l53h6" path="res://block.tscn" id="2_8i3sr"]
+[ext_resource type="PackedScene" uid="uid://c577hx15l53h6" path="res://scene/block.tscn" id="2_8i3sr"]
 [ext_resource type="Script" path="res://script/player/main.gd" id="2_gi88c"]
-[ext_resource type="PackedScene" uid="uid://by6q5awh05yho" path="res://deadly.tscn" id="3_erbyj"]
+[ext_resource type="PackedScene" uid="uid://by6q5awh05yho" path="res://scene/deadly.tscn" id="3_erbyj"]
 [ext_resource type="Script" path="res://script/player/rotation.gd" id="4_7kdi8"]
 [ext_resource type="Script" path="res://script/hud/main.gd" id="7_gnj6g"]
 [ext_resource type="Script" path="res://script/ground/follow.gd" id="9_qesy1"]
@@ -43,7 +43,7 @@ position = Vector2(-190, 0)
 position = Vector2(-380, 0)
 
 [node name="player" type="CharacterBody2D" parent="."]
-position = Vector2(-610, 544)
+position = Vector2(-610, 554)
 script = ExtResource("2_gi88c")
 
 [node name="Camera2D" type="Camera2D" parent="player"]
@@ -75,12 +75,11 @@ script = ExtResource("7_gnj6g")
 [node name="Music" type="AudioStreamPlayer" parent="."]
 
 [node name="followground" type="StaticBody2D" parent="."]
-position = Vector2(955, 900)
+position = Vector2(963, 662)
 scale = Vector2(5, 5)
 script = ExtResource("9_qesy1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="followground"]
-position = Vector2(0, -46)
 shape = SubResource("RectangleShape2D_8dft0")
 
 [connection signal="body_entered" from="deadlys" to="player" method="_on_deadlys_body_entered"]
